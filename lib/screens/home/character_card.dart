@@ -18,10 +18,7 @@ class CharacterCard extends StatelessWidget {
 
             IconButton(
               onPressed: () {},
-              icon: Icon(
-                Icons.arrow_forward,
-                color: Color.fromARGB(0, 143, 197, 15),
-              ),
+              icon: Icon(Icons.arrow_forward, color: Colors.green),
             ),
           ],
         ),
