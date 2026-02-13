@@ -1,4 +1,5 @@
-class Character {
+import 'package:flutter_rpg/models/stats.dart';
+class Character with Stats {
 
   Character({
     required this.name, required this.slogan, required this.id
@@ -7,7 +8,7 @@ class Character {
 final String name;
 final String slogan;
 final String id;
-boolean _isFav = false;
+bool _isFav = false;
 
 void toggleIsFav() {
   _isFav = !_isFav;
