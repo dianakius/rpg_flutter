@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/screens/home/character_card.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,20 +9,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List characters = ['mario', 'luigi', 'peach', 'toad'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Your Characters'), centerTitle: true),
+
       body: Container(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            const Text('Character List'),
-            FilledButton(
-            onPressed: () {},
-            child: const Text('Create New'),
-        )
-          ]
+            Expanded(
+              child: ListView.builder(
+                itemCount: characters.length,
+                itemBuilder: (_, index) {
+                  return CharacterCard();
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
