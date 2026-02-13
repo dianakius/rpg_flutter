@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
               child: ListView.builder(
                 itemCount: characters.length,
                 itemBuilder: (_, index) {
-                  return CharacterCard();
+                  return CharacterCard(character: characters[index]);
                 },
               ),
             ),
