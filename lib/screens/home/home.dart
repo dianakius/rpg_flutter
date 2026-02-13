@@ -9,26 +9,22 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List characters = ['mario', 'luigi', 'peach', 'toad'];
+  final List<String> characters = ['mario', 'luigi', 'peach', 'toad'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Your Characters'), centerTitle: true),
-
-      body: Container(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Your Characters'),
+        centerTitle: true,
+      ),
+      body: ListView.builder(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: characters.length,
-                itemBuilder: (_, index) {
-                  return CharacterCard(character: characters[index]);
-                },
-              ),
-            ),
-          ],
-        ),
+        itemCount: characters.length,
+        itemBuilder: (_, index) {
+          return CharacterCard(character: characters[index]);
+        },
       ),
     );
   }
