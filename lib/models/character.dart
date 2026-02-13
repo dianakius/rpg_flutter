@@ -10,6 +10,8 @@ final String slogan;
 final String id;
 bool _isFav = false;
 
+get isFav => _isFav;
+
 void toggleIsFav() {
   _isFav = !_isFav;
 }
